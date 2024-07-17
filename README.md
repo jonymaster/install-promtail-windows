@@ -33,8 +33,8 @@ for more information.
 In order to use an environment variable in the configuration file, you can use the syntax `${ENV_VAR}`.
 To avoid having to store a system-wide environment variable, follow the following steps:
 
-1. Create a REG_MULTI_SZ registry value named Environment under 
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\<service-name-that-you-used-for-the-otel-collector>
+1. Create a `REG_MULTI_SZ` registry value named Environment under 
+`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\<service-name-of-Promtail>`
 2. On this multistring value each line represents an environment variable visible only to the specific service. 
 The syntax of each line is the name of the environment variable followed by an =, 
 everything after the sign until the end of the line is the value of the environment variable.
