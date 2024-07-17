@@ -196,6 +196,7 @@ $configFilename = "promtail.yml"
 $winSWConfigFilename = "WinSW-x64.xml"
 
 # Get the latest release version number from the redirect URL
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $redirectedUrl = (Invoke-WebRequest -Uri $latestReleaseUrl -UseBasicParsing).BaseResponse.ResponseUri.AbsoluteUri
 $latestVersion = ($redirectedUrl -split '/tag/')[-1].Trim('/')
 
