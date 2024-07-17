@@ -93,7 +93,7 @@ clients:
     basic_auth:
       username: "loki-username"
       password: "loki-password"
-      #To use a variable such as `$`{env:LOKI_AUTH} refer to the readme of this repo.
+      #To use a variable such as `$`{LOKI_AUTH} refer to the readme of this repo.
 
 
 scrape_configs:
