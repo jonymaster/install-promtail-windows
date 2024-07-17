@@ -1,0 +1,53 @@
+# 1. Update positions.yaml path
+# 2. Update client's url - this is the url of Loki service - update or remove basic_auth
+# 3. Update what logs should be scraped
+
+
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: C:\Promtail\positions.yaml
+
+clients:
+  - url: "https://loki-url/loki/api/v1/push"
+# The tenant ID used by default to push logs to Loki. If omitted or empty
+# it assumes Loki is running in single-tenant mode and no X-Scope-OrgID header
+# is sent.
+    basic_auth:
+      username: "loki-username"
+      password: "loki-password"
+      #To use a variable such as ${env:LOKI_AUTH} refer to the readme of this repo.
+
+
+scrape_configs:
+  - job_name: windows-application-logs
+    windows_events:
+      eventlog_name: "Application"
+      xpath_query: "*"
+      poll_interval: "1m"
+      use_incoming_timestamp: false
+      bookmark_path: "./bookmark_application_logs.xml"
+      labels:
+        service: windows-test-logs
+
+  - job_name: windows-security-logs
+    windows_events:
+      eventlog_name: "Security"
+      xpath_query: "*"
+      poll_interval: "1m"
+      use_incoming_timestamp: false
+      bookmark_path: "./bookmark_security_logs.xml"
+      labels:
+        service: windows-test-logs
+
+  - job_name: windows-system-logs
+    windows_events:
+      eventlog_name: "System"
+      xpath_query: "*"
+      poll_interval: "1m"
+      use_incoming_timestamp: false
+      bookmark_path: "./bookmark_system_logs.xml"
+      labels:
+        service: windows-test-logs
