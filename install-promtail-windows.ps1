@@ -165,7 +165,7 @@ function New-DefaultWinSWConfig {
      <!-- Path to the executable, which should be started -->
      <executable>""$fullPromtailBinPath""</executable>
 
-     <arguments>--config.file=""$fullPromtailConfigPath""</arguments>
+     <arguments>--config.file=""$fullPromtailConfigPath"" --config.expand-env=true</arguments>
 
    </service>
 "
