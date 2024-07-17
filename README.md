@@ -12,6 +12,13 @@ Powershell script to install Promtail for Windows hosts to get Windows Events
 3. You can run the application in debug mode to check if the configuration is correct. 
 To do so, run the command: `.\promtail-windows-amd64.exe --config.file=promtail.yml --config.expand-env=true`
 from the `C:\Promtail` directory
+### Run the service
+Once your configuration is correct, you can start the service:
+1. Open Windows Services
+2. Start the service named `Promtail`
+
+You can validate the configuration by running the following command:
+`.\promtail-windows-amd64.exe --config.file=promtail.yml --check-syntax`
 
 ## Configuration
 
