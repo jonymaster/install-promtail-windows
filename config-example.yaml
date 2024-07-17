@@ -30,7 +30,7 @@ scrape_configs:
       use_incoming_timestamp: false
       bookmark_path: "./bookmark_application_logs.xml"
       labels:
-        service: windows-test-logs
+        service: windows-events
 
   - job_name: windows-security-logs
     windows_events:
@@ -40,7 +40,7 @@ scrape_configs:
       use_incoming_timestamp: false
       bookmark_path: "./bookmark_security_logs.xml"
       labels:
-        service: windows-test-logs
+        service: windows-events
 
   - job_name: windows-system-logs
     windows_events:
@@ -50,4 +50,4 @@ scrape_configs:
       use_incoming_timestamp: false
       bookmark_path: "./bookmark_system_logs.xml"
       labels:
-        service: windows-test-logs
+        service: windows-events
