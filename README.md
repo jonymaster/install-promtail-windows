@@ -40,3 +40,6 @@ The syntax of each line is the name of the environment variable followed by an =
 everything after the sign until the end of the line is the value of the environment variable.
     For example, for `LOKI_AUTH` add a line like:
     `LOKI_AUTH=<your-value-for-otel-auth>`
+
+
+Thanks to @OndrejValenta for the initial script
