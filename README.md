@@ -42,4 +42,4 @@ everything after the sign until the end of the line is the value of the environm
     `LOKI_AUTH=<your-value-for-otel-auth>`
 
 
-Thanks to @OndrejValenta for the initial script
+Thanks to @[OndrejValenta](https://github.com/OndrejValenta) for the initial script
