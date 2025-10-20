@@ -3,8 +3,7 @@
 # creates default configuration and creates Windows service.
 # It's a decision based script.
 #
-# ↓ ↓ ↓ ↓       HELPER FUNCTIONS    ↓ ↓ ↓ ↓
-# ↓↓↓↓↓↓↓       PROCESSING CODE     ↓↓↓↓↓↓↓
+# HELPER FUNCTIONS
 #############################################################################################
 
 function Prompt-User {
@@ -149,10 +148,6 @@ function New-DefaultWinSWConfig {
     Write-Output "Writing default WinSW config to $fullConfigPath"
 
     $content = "
-    <!--
-    You can find more information about the configuration options here: https://github.com/kohsuke/winsw/blob/master/doc/xmlConfigFile.md
-    Full example: https://github.com/kohsuke/winsw/blob/master/examples/sample-allOptions.xml
-   -->
    <service>
 
      <!-- ID of the service. It should be unique across the Windows system-->
@@ -169,18 +164,10 @@ function New-DefaultWinSWConfig {
 
    </service>
 "
-
     Set-Content -Path $fullConfigPath -Value $content
 }
 
-
-#############################################
-# ↑ ↑ ↑ ↑   HELPER FUNCTIONS          ↑ ↑ ↑ ↑
-#
-#
-# ↓ ↓ ↓ ↓   PROCESSING CODE           ↓ ↓ ↓ ↓
-#############################################
-
+# PROCESSING CODE 
 
 Write-Warning -Message "This script creates a Window Service for Promtail log scraper. It is necessary to run it with Admin priviledges.
 
